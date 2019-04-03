@@ -1,0 +1,46 @@
+.content{
+    max-width: 500px;
+    margin: auto;
+}
+
+#video-background{
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+}
+
+h1{
+    color: white;
+    font-family: 'Georgia', Times, 'Times New Roman', serif;;
+    background: grey;
+    opacity: 0.95;
+    position: inherit;
+    text-align: center;
+}
+
+#instructions {
+    color: white;
+    font-family: 'Georgia', Times, 'Times New Roman', serif;;
+    background: grey;
+    opacity: 0.95;
+    position: inherit;
+
+}
+
+#bluePylon, #greenPylon, #yellowPylon, #redPylon{
+    width: 118px;
+}
+
+
+#yourScore, #playerScore, #win-lost, #goalScore {
+    font-family: 'Georgia', Times, 'Times New Roman', serif;;
+    color: white;
+    background: grey;
+    opacity: 0.95;
+    text-align: center;
+}
