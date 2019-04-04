@@ -17,7 +17,7 @@
 h1{
     color: white;
     font-family: 'Georgia', Times, 'Times New Roman', serif;;
-    background: grey;
+    background: blue;
     opacity: 0.95;
     position: inherit;
     text-align: center;
@@ -37,11 +37,11 @@ h1{
 #randomNumber{
     color: white;
     font-family: 'Georgia', Times, 'Times New Roman', serif;;
-    background: grey;
+    background: green;
     opacity: 0.95;
     position: inherit;
     text-align: center;
-    font-size: 48px;
+    font-size: 36px;
 
 }
 
@@ -62,11 +62,20 @@ h1{
     font-size: 24px;
 }
 
-#playerScore, #wins, #lost{
-    font-family: 'Georgia', Times, 'Times New Roman', serif;;
-    color: white;
-    background: grey;
+#wins, #lost{
+    font-family: 'Georgia', Times, 'Times New Roman', serif;
+    color: black;
+    background: yellow;
     opacity: 0.95;
     text-align: center;
-    font-size: 48px;
+    font-size: 36px;
+}
+
+#playerScore{
+    font-family: 'Georgia', Times, 'Times New Roman', serif;;
+    color: white;
+    background: red;
+    opacity: 0.95;
+    text-align: center;
+    font-size: 36px;
 }
