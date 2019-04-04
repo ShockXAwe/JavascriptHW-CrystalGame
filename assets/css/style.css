@@ -16,12 +16,12 @@
 
 h1{
     color: white;
-    font-family: 'Georgia', Times, 'Times New Roman', serif;;
+    font-family: 'Georgia', Times, 'Times New Roman', serif;
     background: blue;
     opacity: 0.95;
     position: inherit;
     text-align: center;
-    font-size: 64px;
+    font-size: 48px;
 }
 
 #instructions {
@@ -30,7 +30,7 @@ h1{
     background: grey;
     opacity: 0.95;
     position: inherit;
-    font-size: 22px;
+    font-size: 18px;
 
 }
 
@@ -41,7 +41,7 @@ h1{
     opacity: 0.95;
     position: inherit;
     text-align: center;
-    font-size: 36px;
+    font-size: 28px;
 
 }
 
@@ -68,7 +68,7 @@ h1{
     background: yellow;
     opacity: 0.95;
     text-align: center;
-    font-size: 36px;
+    font-size: 24px;
 }
 
 #playerScore{
@@ -77,5 +77,5 @@ h1{
     background: red;
     opacity: 0.95;
     text-align: center;
-    font-size: 36px;
+    font-size: 28px;
 }
