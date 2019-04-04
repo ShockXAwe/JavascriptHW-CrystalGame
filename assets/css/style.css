@@ -32,6 +32,15 @@ h1{
 
 }
 
+#randomNumber{
+    color: white;
+    font-family: 'Georgia', Times, 'Times New Roman', serif;;
+    background: grey;
+    opacity: 0.95;
+    position: inherit;
+
+}
+
 #bluePylon, #greenPylon, #yellowPylon, #redPylon{
     width: 118px;
 }
