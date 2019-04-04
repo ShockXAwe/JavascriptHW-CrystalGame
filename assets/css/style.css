@@ -1,5 +1,5 @@
 .content{
-    max-width: 500px;
+    max-width: 600px;
     margin: auto;
 }
 
@@ -21,6 +21,7 @@ h1{
     opacity: 0.95;
     position: inherit;
     text-align: center;
+    font-size: 64px;
 }
 
 #instructions {
@@ -29,6 +30,7 @@ h1{
     background: grey;
     opacity: 0.95;
     position: inherit;
+    font-size: 22px;
 
 }
 
@@ -38,18 +40,33 @@ h1{
     background: grey;
     opacity: 0.95;
     position: inherit;
+    text-align: center;
+    font-size: 48px;
 
+}
+
+#crystals{
+    margin-left: 10%;
 }
 
 #bluePylon, #greenPylon, #yellowPylon, #redPylon{
     width: 118px;
 }
 
-
-#yourScore, #playerScore, #win-lost, #goalScore {
+#yourScore, #goalScore {
     font-family: 'Georgia', Times, 'Times New Roman', serif;;
     color: white;
     background: grey;
     opacity: 0.95;
     text-align: center;
+    font-size: 24px;
+}
+
+#playerScore, #wins, #lost{
+    font-family: 'Georgia', Times, 'Times New Roman', serif;;
+    color: white;
+    background: grey;
+    opacity: 0.95;
+    text-align: center;
+    font-size: 48px;
 }
