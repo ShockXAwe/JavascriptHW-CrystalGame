@@ -1,7 +1,10 @@
 // Variables for the game to function
 var numberGoal = Math.floor(Math.random() * 102) + 19;
 // var userOptions = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
-var userOptions = Math.floor(Math.random() * 12) + 1;
+var userOptionsBlue = Math.floor(Math.random() * 12) + 1;
+var userOptionsGreen = Math.floor(Math.random() * 12) + 1;
+var userOptionsYellow = Math.floor(Math.random() * 12) + 1;
+var userOptionsRed = Math.floor(Math.random() * 12) + 1;
 var userCount = 0;
 var win = 0;
 var lost = 0;
@@ -13,12 +16,22 @@ var pylonRed = $("#redPylon");
 // Tieing up the HTML div with the random number being created
 $("#randomNumber").text("Random number: " + numberGoal);
 
-
-
-pylonBlue.attr("data-pylonBlue", userOptions);
-
+// Add attr name data-pylonBlue and the random numbers variable to pylonBlue
+pylonBlue.attr("data-pylonBlue", userOptionsBlue);
+// Append to the ID bluePylon which already has the attributes as added above
 $("#bluePylon").append(pylonBlue);
 
+pylonGreen.attr("data-pylonGreen", userOptionsGreen);
+$("#greenPylon").append(pylonGreen);
+
+pylonYellow.attr("data-pylonYellow", userOptionsYellow);
+$("#yellowPylon").append(pylonYellow);
+
+pylonRed.attr("data-pylonRed", userOptionsRed);
+$("#redPylon").append(pylonRed);
+
+
+// Create the function if you click on bluePylon
 $("#bluePylon").on("click", function () {
 
   var crystalValue = ($(this).attr("data-pylonBlue"));
@@ -28,16 +41,75 @@ $("#bluePylon").on("click", function () {
   $("#playerScore").text("Your current amount: " + userCount);
 
   if (userCount === numberGoal) {
-    countWinOrLoss('win')
+    countWinOrLossBlue('win')
   }
 
   else if (userCount > numberGoal) {
-    countWinOrLoss('loss')
+    countWinOrLossBlue('loss')
   }
 
 })
+
+$("#greenPylon").on("click", function () {
+
+  var crystalValue = ($(this).attr("data-pylonGreen"));
+  crystalValue = parseInt(crystalValue);
+  userCount += crystalValue;
+
+  $("#playerScore").text("Your current amount: " + userCount);
+
+  if (userCount === numberGoal) {
+    countWinOrLossGreen('win')
+  }
+
+  else if (userCount > numberGoal) {
+    countWinOrLossGreen('loss')
+  }
+
+})
+
+$("#yellowPylon").on("click", function () {
+
+  var crystalValue = ($(this).attr("data-pylonYellow"));
+  crystalValue = parseInt(crystalValue);
+  userCount += crystalValue;
+
+  $("#playerScore").text("Your current amount: " + userCount);
+
+  if (userCount === numberGoal) {
+    countWinOrLossYellow('win')
+  }
+
+  else if (userCount > numberGoal) {
+    countWinOrLossYellow('loss')
+  }
+
+})
+
+$("#redPylon").on("click", function () {
+
+  var crystalValue = ($(this).attr("data-pylonRed"));
+  crystalValue = parseInt(crystalValue);
+  userCount += crystalValue;
+
+  $("#playerScore").text("Your current amount: " + userCount);
+
+  if (userCount === numberGoal) {
+    countWinOrLossRed('win')
+  }
+
+  else if (userCount > numberGoal) {
+    countWinOrLossRed('loss')
+  }
+
+})
+
+
+
+
+
 // Function created for Win or Loss
-function countWinOrLoss(result) {
+function countWinOrLossBlue(result) {
   // If win do below
   if (result === 'win') {
     win++;
@@ -50,10 +122,76 @@ function countWinOrLoss(result) {
   // This happens below to both win and loss since its not in the if and else if.
   var newNumberGoal = Math.floor(Math.random() * 102) + 19;
   $("#randomNumber").text("Random number: " + newNumberGoal);
-  userOptions = Math.floor(Math.random() * 12) + 1;
+  userOptionsBlue = Math.floor(Math.random() * 12) + 1;
   var newUserOption = Math.floor(Math.random() * 12) + 1;
   pylonBlue.attr("data-pylonBlue", newUserOption);
   $("#bluePylon").append(pylonBlue);
+
+  userCount = 0;
+  numberGoal = newNumberGoal;
+}
+
+function countWinOrLossGreen(result) {
+  // If win do below
+  if (result === 'win') {
+    win++;
+    $("#wins").text("Wins: " + win);
+    // If loss do below
+  } else if (result === 'loss') {
+    lost++;
+    $("#lost").text("Lost: " + lost);
+  }
+  // This happens below to both win and loss since its not in the if and else if.
+  var newNumberGoal = Math.floor(Math.random() * 102) + 19;
+  $("#randomNumber").text("Random number: " + newNumberGoal);
+  userOptionsGreen = Math.floor(Math.random() * 12) + 1;
+  var newUserOption = Math.floor(Math.random() * 12) + 1;
+  pylonGreen.attr("data-pylonGreen", newUserOption);
+  $("#greenPylon").append(pylonGreen);
+
+  userCount = 0;
+  numberGoal = newNumberGoal;
+}
+
+function countWinOrLossYellow(result) {
+  // If win do below
+  if (result === 'win') {
+    win++;
+    $("#wins").text("Wins: " + win);
+    // If loss do below
+  } else if (result === 'loss') {
+    lost++;
+    $("#lost").text("Lost: " + lost);
+  }
+  // This happens below to both win and loss since its not in the if and else if.
+  var newNumberGoal = Math.floor(Math.random() * 102) + 19;
+  $("#randomNumber").text("Random number: " + newNumberGoal);
+  userOptionsYellow = Math.floor(Math.random() * 12) + 1;
+  var newUserOption = Math.floor(Math.random() * 12) + 1;
+  pylonYellow.attr("data-pylonYellow", newUserOption);
+  $("#yellowPylon").append(pylonYellow);
+
+  userCount = 0;
+  numberGoal = newNumberGoal;
+}
+
+function countWinOrLossRed(result) {
+  // If win do below
+  if (result === 'win') {
+    win++;
+    $("#wins").text("Wins: " + win);
+    // If loss do below
+  } else if (result === 'loss') {
+    lost++;
+    $("#lost").text("Lost: " + lost);
+  }
+  // This happens below to both win and loss since its not in the if and else if.
+  var newNumberGoal = Math.floor(Math.random() * 102) + 19;
+  $("#randomNumber").text("Random number: " + newNumberGoal);
+  userOptionsRed = Math.floor(Math.random() * 12) + 1;
+  var newUserOption = Math.floor(Math.random() * 12) + 1;
+  pylonRed.attr("data-pylonRed", newUserOption);
+  $("#redPylon").append(pylonRed);
 
   userCount = 0;
   numberGoal = newNumberGoal;
