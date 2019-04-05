@@ -41,11 +41,11 @@ $("#bluePylon").on("click", function () {
   $("#playerScore").text("Your current amount: " + userCount);
 
   if (userCount === numberGoal) {
-    countWinOrLossBlue('win')
+    countWinOrLoss('win')
   }
 
   else if (userCount > numberGoal) {
-    countWinOrLossBlue('loss')
+    countWinOrLoss('loss')
   }
 
 })
@@ -59,11 +59,11 @@ $("#greenPylon").on("click", function () {
   $("#playerScore").text("Your current amount: " + userCount);
 
   if (userCount === numberGoal) {
-    countWinOrLossGreen('win')
+    countWinOrLoss('win')
   }
 
   else if (userCount > numberGoal) {
-    countWinOrLossGreen('loss')
+    countWinOrLoss('loss')
   }
 
 })
@@ -77,11 +77,11 @@ $("#yellowPylon").on("click", function () {
   $("#playerScore").text("Your current amount: " + userCount);
 
   if (userCount === numberGoal) {
-    countWinOrLossYellow('win')
+    countWinOrLoss('win')
   }
 
   else if (userCount > numberGoal) {
-    countWinOrLossYellow('loss')
+    countWinOrLoss('loss')
   }
 
 })
@@ -95,11 +95,11 @@ $("#redPylon").on("click", function () {
   $("#playerScore").text("Your current amount: " + userCount);
 
   if (userCount === numberGoal) {
-    countWinOrLossRed('win')
+    countWinOrLoss('win')
   }
 
   else if (userCount > numberGoal) {
-    countWinOrLossRed('loss')
+    countWinOrLoss('loss')
   }
 
 })
@@ -109,90 +109,120 @@ $("#redPylon").on("click", function () {
 
 
 // Function created for Win or Loss
-function countWinOrLossBlue(result) {
+function countWinOrLoss(result) {
   // If win do below
   if (result === 'win') {
     win++;
+    // userCount = 0;
     $("#wins").text("Wins: " + win);
+    alert("Nice job! You win!")
     // If loss do below
   } else if (result === 'loss') {
     lost++;
+    // userCount = 0;
+    alert("GG you lose!")
     $("#lost").text("Lost: " + lost);
   }
   // This happens below to both win and loss since its not in the if and else if.
   var newNumberGoal = Math.floor(Math.random() * 102) + 19;
   $("#randomNumber").text("Random number: " + newNumberGoal);
+
   userOptionsBlue = Math.floor(Math.random() * 12) + 1;
-  var newUserOption = Math.floor(Math.random() * 12) + 1;
-  pylonBlue.attr("data-pylonBlue", newUserOption);
+  var newUserOptionBlue = Math.floor(Math.random() * 12) + 1;
+
+  userOptionsGreen = Math.floor(Math.random() * 12) + 1;
+  var newUserOptionGreen = Math.floor(Math.random() * 12) + 1;
+
+  userOptionsYellow = Math.floor(Math.random() * 12) + 1;
+  var newUserOptionYellow = Math.floor(Math.random() * 12) + 1;
+
+  userOptionsRed = Math.floor(Math.random() * 12) + 1;
+  var newUserOptionRed = Math.floor(Math.random() * 12) + 1;
+
+  pylonBlue.attr("data-pylonBlue", newUserOptionBlue);
   $("#bluePylon").append(pylonBlue);
 
-  userCount = 0;
-  numberGoal = newNumberGoal;
-}
-
-function countWinOrLossGreen(result) {
-  // If win do below
-  if (result === 'win') {
-    win++;
-    $("#wins").text("Wins: " + win);
-    // If loss do below
-  } else if (result === 'loss') {
-    lost++;
-    $("#lost").text("Lost: " + lost);
-  }
-  // This happens below to both win and loss since its not in the if and else if.
-  var newNumberGoal = Math.floor(Math.random() * 102) + 19;
-  $("#randomNumber").text("Random number: " + newNumberGoal);
-  userOptionsGreen = Math.floor(Math.random() * 12) + 1;
-  var newUserOption = Math.floor(Math.random() * 12) + 1;
-  pylonGreen.attr("data-pylonGreen", newUserOption);
+  pylonGreen.attr("data-pylonGreen", newUserOptionGreen);
   $("#greenPylon").append(pylonGreen);
 
-  userCount = 0;
-  numberGoal = newNumberGoal;
-}
-
-function countWinOrLossYellow(result) {
-  // If win do below
-  if (result === 'win') {
-    win++;
-    $("#wins").text("Wins: " + win);
-    // If loss do below
-  } else if (result === 'loss') {
-    lost++;
-    $("#lost").text("Lost: " + lost);
-  }
-  // This happens below to both win and loss since its not in the if and else if.
-  var newNumberGoal = Math.floor(Math.random() * 102) + 19;
-  $("#randomNumber").text("Random number: " + newNumberGoal);
-  userOptionsYellow = Math.floor(Math.random() * 12) + 1;
-  var newUserOption = Math.floor(Math.random() * 12) + 1;
-  pylonYellow.attr("data-pylonYellow", newUserOption);
+  pylonYellow.attr("data-pylonYellow", newUserOptionYellow);
   $("#yellowPylon").append(pylonYellow);
 
-  userCount = 0;
-  numberGoal = newNumberGoal;
-}
-
-function countWinOrLossRed(result) {
-  // If win do below
-  if (result === 'win') {
-    win++;
-    $("#wins").text("Wins: " + win);
-    // If loss do below
-  } else if (result === 'loss') {
-    lost++;
-    $("#lost").text("Lost: " + lost);
-  }
-  // This happens below to both win and loss since its not in the if and else if.
-  var newNumberGoal = Math.floor(Math.random() * 102) + 19;
-  $("#randomNumber").text("Random number: " + newNumberGoal);
-  userOptionsRed = Math.floor(Math.random() * 12) + 1;
-  var newUserOption = Math.floor(Math.random() * 12) + 1;
-  pylonRed.attr("data-pylonRed", newUserOption);
+  pylonRed.attr("data-pylonRed", newUserOptionRed);
   $("#redPylon").append(pylonRed);
 
+
+
   userCount = 0;
+  $("#playerScore").text("Your current amount: " + userCount);
   numberGoal = newNumberGoal;
 }
+
+// function countWinOrLossGreen(result) {
+//   // If win do below
+//   if (result === 'win') {
+//     win++;
+//     $("#wins").text("Wins: " + win);
+//     // If loss do below
+//   } else if (result === 'loss') {
+//     lost++;
+//     $("#lost").text("Lost: " + lost);
+//   }
+//   // This happens below to both win and loss since its not in the if and else if.
+//   var newNumberGoal = Math.floor(Math.random() * 102) + 19;
+//   $("#randomNumber").text("Random number: " + newNumberGoal);
+//   userOptionsGreen = Math.floor(Math.random() * 12) + 1;
+//   var newUserOption = Math.floor(Math.random() * 12) + 1;
+
+//   pylonGreen.attr("data-pylonGreen", newUserOption);
+//   $("#greenPylon").append(pylonGreen);
+
+//   userCount = 0;
+//   numberGoal = newNumberGoal;
+// }
+
+// function countWinOrLossYellow(result) {
+//   // If win do below
+//   if (result === 'win') {
+//     win++;
+//     $("#wins").text("Wins: " + win);
+//     // If loss do below
+//   } else if (result === 'loss') {
+//     lost++;
+//     $("#lost").text("Lost: " + lost);
+//   }
+//   // This happens below to both win and loss since its not in the if and else if.
+//   var newNumberGoal = Math.floor(Math.random() * 102) + 19;
+//   $("#randomNumber").text("Random number: " + newNumberGoal);
+//   userOptionsYellow = Math.floor(Math.random() * 12) + 1;
+//   var newUserOption = Math.floor(Math.random() * 12) + 1;
+
+//   pylonYellow.attr("data-pylonYellow", newUserOption);
+//   $("#yellowPylon").append(pylonYellow);
+
+//   userCount = 0;
+//   numberGoal = newNumberGoal;
+// }
+
+// function countWinOrLossRed(result) {
+//   // If win do below
+//   if (result === 'win') {
+//     win++;
+//     $("#wins").text("Wins: " + win);
+//     // If loss do below
+//   } else if (result === 'loss') {
+//     lost++;
+//     $("#lost").text("Lost: " + lost);
+//   }
+//   // This happens below to both win and loss since its not in the if and else if.
+//   var newNumberGoal = Math.floor(Math.random() * 102) + 19;
+//   $("#randomNumber").text("Random number: " + newNumberGoal);
+//   userOptionsRed = Math.floor(Math.random() * 12) + 1;
+//   var newUserOption = Math.floor(Math.random() * 12) + 1;
+
+//   pylonRed.attr("data-pylonRed", newUserOption);
+//   $("#redPylon").append(pylonRed);
+
+//   userCount = 0;
+//   numberGoal = newNumberGoal;
+// }
