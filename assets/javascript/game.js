@@ -121,7 +121,7 @@ function countWinOrLoss(result) {
     lost++;
     // userCount = 0;
     alert("GG you lose!")
-    $("#lost").text("Lost: " + lost);
+    $("#lost").text("Losses: " + lost);
   }
   // This happens below to both win and loss since its not in the if and else if.
   var newNumberGoal = Math.floor(Math.random() * 102) + 19;
@@ -154,7 +154,7 @@ function countWinOrLoss(result) {
 
 
   userCount = 0;
-  $("#playerScore").text("Your current amount: " + userCount);
+  $("#playerScore").text("Your total score: " + userCount);
   numberGoal = newNumberGoal;
 }
 
